@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:headless": "HEADLESS=true playwright test"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
