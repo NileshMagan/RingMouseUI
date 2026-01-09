@@ -12,7 +12,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'npm run dev',
+    command: './run-tauri-headless.sh',
     url: 'http://localhost:1420',
     reuseExistingServer: !process.env.CI,
   },
