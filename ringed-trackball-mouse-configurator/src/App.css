@@ -137,3 +137,85 @@ button {
 body {
   background-color: transparent !important;
 }
+
+.gesture-ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.gesture-indicator {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Animations */
+.gesture-indicator.swipe-up {
+  animation: swipe-up 0.5s ease-out;
+}
+
+.gesture-indicator.swipe-down {
+  animation: swipe-down 0.5s ease-out;
+}
+
+.gesture-indicator.swipe-left {
+  animation: swipe-left 0.5s ease-out;
+}
+
+.gesture-indicator.swipe-right {
+  animation: swipe-right 0.5s ease-out;
+}
+
+.gesture-indicator.click {
+  animation: click 0.3s ease-out;
+}
+
+.gesture-indicator.hold {
+  animation: hold 1s infinite;
+}
+
+.gesture-indicator.keyboard-cycle {
+  animation: keyboard-cycle 1s infinite;
+}
+
+/* Keyframes */
+@keyframes swipe-up {
+  from { top: 50%; opacity: 1; }
+  to { top: 0; opacity: 0; }
+}
+
+@keyframes swipe-down {
+  from { top: 50%; opacity: 1; }
+  to { top: 100%; opacity: 0; }
+}
+
+@keyframes swipe-left {
+  from { left: 50%; opacity: 1; }
+  to { left: 0; opacity: 0; }
+}
+
+@keyframes swipe-right {
+  from { left: 50%; opacity: 1; }
+  to { left: 100%; opacity: 0; }
+}
+
+@keyframes click {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes hold {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes keyboard-cycle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
